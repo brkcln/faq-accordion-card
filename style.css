@@ -10,7 +10,7 @@ button {
 }
 
 body {
-	color: hsl(240, 6%, 50%);
+	color: hsl(238, 29%, 16%);
 	font-size: 12px;
 	font-family: "Kumbh Sans", sans-serif;
 	background: url(images/bg-pattern-desktop.svg) no-repeat;
@@ -71,18 +71,15 @@ img {
 	-moz-border-radius: 25px;
 	-ms-border-radius: 25px;
 	-o-border-radius: 25px;
-	box-shadow: 0 0 25px rgba(88, 75, 75, 0.473);
+	box-shadow: 0 0 25px 5px rgba(88, 75, 75, 0.473);
 	margin: auto;
+	padding: 2em 0;
+	max-height: 860px;
 	max-width: 860px;
-	height: 40em;
-	padding: 1.5em 0;
 }
-.hero .hero__image {
+.hero__image {
 	background: url(images/illustration-woman-online-desktop.svg) no-repeat;
 	background-position: right center;
-	background-size: cover;
-	margin: 3em 3em 5em 0;
-	padding-left: 6em;
 	position: relative;
 	width: 100%;
 }
@@ -97,31 +94,32 @@ img {
 	-o-transform: translate(-50%, -70%);
 }
 
-.hero .hero__content {
-	padding: 0 3em 0 0;
-	margin: 0 1em;
+.hero__content {
+	padding-right: 3em;
+	margin-left: 3em;
+	padding-left: 3em;
 }
-.hero .hero__content:last-child {
+.hero__content:last-child {
 	margin-left: 1em;
 }
 
 /* Accordion styles */
-.tabs {
+.content__container {
 	overflow: hidden;
 	position: relative;
 	max-width: 90%;
 	height: 100%;
 }
 
-.tab {
+.content__tab {
 	width: 100%;
 	color: white;
 	overflow: hidden;
 	margin: 1.75em auto;
-	border-bottom: 1px solid rgba(88, 75, 75, 0.192);
+	border-bottom: 1px solid hsl(240, 5%, 91%);
 }
 
-.tab-label {
+.tab__label {
 	display: flex;
 	justify-content: space-between;
 	padding: 1em;
@@ -131,11 +129,11 @@ img {
 	/* Icon */
 }
 
-.tab-label:hover {
-	color: rgba(155, 32, 32, 0.733);
+.tab__label:hover {
+	color: hsl(14, 88%, 65%);
 }
 
-.tab-label::after {
+.tab__label::after {
 	content: url(images/icon-arrow-down.svg);
 	width: 1em;
 	height: 1em;
@@ -147,37 +145,68 @@ img {
 	-o-transition: all 0.25s;
 }
 
-.tab-content {
+.tab__content {
 	max-height: 0;
 	padding: 0 1em;
 	color: #2c3e50;
 	background: white;
 	transition: all 0.35s;
 }
-
-.tab-close {
-	display: flex;
-	justify-content: flex-end;
-	padding: 1em;
-	font-size: 0.75em;
-	background: #2c3e50;
-	cursor: pointer;
-}
-
-.tab-close:hover {
-	background: #1a252f;
-}
-
-input:checked + .tab-label {
+input:checked + .tab__label {
 	color: hsl(237, 12%, 33%);
 	font-weight: bold;
 }
 
-input:checked + .tab-label::after {
+input:checked + .tab__label::after {
 	transform: rotate(90deg);
 }
 
-input:checked ~ .tab-content {
+input:checked ~ .tab__content {
 	max-height: 100vh;
 	padding: 1em;
+}
+
+/* --------------------
+    media - mobil
+-----------------------*/
+@media (max-width: 768px) {
+	.hero {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		max-width: 65%;
+		margin-top: 5em;
+	}
+	.hero__image {
+		background: url(images/illustration-woman-online-mobile.svg) no-repeat;
+		height: 15em;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 50%;
+		background-position: center;
+		background-size: contain;
+		transform: translate(-50%, -55%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -55%);
+		-ms-transform: translate(-50%, -55%);
+		-o-transform: translate(-50%, -55%);
+	}
+	.hero__image-cube {
+		display: none;
+	}
+	h1 {
+		text-align: center;
+		margin-top: 2em;
+	}
+	.content__container {
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.hero__content {
+		padding: 1em 0 0;
+		margin: 2em 1em;
+	}
 }
