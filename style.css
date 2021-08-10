@@ -73,17 +73,16 @@ img {
 	-o-border-radius: 25px;
 	box-shadow: 0 0 25px rgba(88, 75, 75, 0.473);
 	margin: auto;
-	max-width: 90%;
+	max-width: 860px;
 	height: 40em;
-	padding: 0 1em;
+	padding: 1.5em 0;
 }
-
 .hero .hero__image {
 	background: url(images/illustration-woman-online-desktop.svg) no-repeat;
 	background-position: right center;
 	background-size: cover;
-	margin: 5em;
-	padding-left: 5em;
+	margin: 3em 3em 5em 0;
+	padding-left: 6em;
 	position: relative;
 	width: 100%;
 }
@@ -100,6 +99,7 @@ img {
 
 .hero .hero__content {
 	padding: 0 3em 0 0;
+	margin: 0 1em;
 }
 .hero .hero__content:last-child {
 	margin-left: 1em;
